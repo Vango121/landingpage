@@ -1,6 +1,6 @@
 import { motion } from 'framer-motion'
 
-const brandNames = ['RentFlow', 'LeaseHub', 'Tenanto', 'Propello', 'HomeFlow', 'Rentlane', 'Keynest', 'Properly', 'Nestflow', 'Tenantly']
+const brandNames = ['ownerly', 'LeaseHub', 'Tenanto', 'Propello', 'HomeFlow', 'Rentlane', 'Keynest', 'Properly', 'Nestflow', 'Tenantly']
 
 const valueCards = [
   {
@@ -71,9 +71,9 @@ function Header() {
   return (
     <header className="fixed inset-x-0 top-0 z-50 px-4 py-3">
       <nav className="glass mx-auto flex max-w-6xl items-center justify-between rounded-full border border-white/70 px-4 py-3 shadow-soft">
-        <a href="#" className="flex items-center gap-2" aria-label="RentFlow home">
-          <span className="grid h-8 w-8 place-items-center rounded-full bg-ink text-sm font-bold text-white">R</span>
-          <span className="font-semibold tracking-tight">RentFlow</span>
+        <a href="#" className="flex items-center gap-2" aria-label="ownerly home">
+          <span className="grid h-8 w-8 place-items-center rounded-full bg-ink text-sm font-bold text-white">o</span>
+          <span className="font-semibold tracking-tight">ownerly</span>
         </a>
         <div className="hidden items-center gap-7 text-sm text-ink/70 md:flex">
           <a href="#why" className="hover:text-ink">Dlaczego</a>
@@ -98,7 +98,7 @@ function Hero() {
             Zwiększ jakość obsługi właścicieli nieruchomości
           </h1>
           <p className="mt-7 max-w-2xl text-lg leading-8 text-ink/68 md:text-xl">
-            RentFlow zamiast chaosu maili, PDF-ów i WhatsAppa — dla każdego klienta Twojej agencji.
+            ownerly pomaga agencji przekazać właścicielowi proste narzędzie do dokumentów, płatności i zgłoszeń lokatora po wynajęciu mieszkania.
           </p>
           <div className="mt-10 flex flex-col gap-3 sm:flex-row">
             <a href="#waitlist" className="rounded-full bg-accent px-6 py-3 text-center font-semibold text-white shadow-soft transition hover:-translate-y-0.5 hover:bg-ink">
@@ -261,13 +261,13 @@ function Features() {
 
 function TodayVsRentFlow() {
   const today = ['agencja wysyła właścicielowi umowę i protokół mailem', 'po przekazaniu mieszkania kontakt zwykle się urywa', 'właściciel sam pilnuje czynszu w arkuszu albo notatkach', 'lokator pisze o usterkach na WhatsAppie', 'przy kolejnym wynajmie dokumenty trzeba zbierać od nowa']
-  const rentflow = ['właściciel dostaje od agencji gotowy portal', 'agencja zostawia po sobie praktyczne narzędzie', 'czynsz, kaucja i terminy mają jasny status', 'zgłoszenie lokatora ma opis, zdjęcia i historię', 'przy kolejnym wynajmie wszystko startuje z gotowych danych']
+  const ownerly = ['właściciel dostaje od agencji gotowy portal', 'agencja zostawia po sobie praktyczne narzędzie', 'czynsz, kaucja i terminy mają jasny status', 'zgłoszenie lokatora ma opis, zdjęcia i historię', 'przy kolejnym wynajmie wszystko startuje z gotowych danych']
 
   return (
     <section className="px-4 py-20">
       <div className="mx-auto grid max-w-6xl gap-5 md:grid-cols-2">
         <ComparisonCard title="Dzisiaj" items={today} mark="x" muted />
-        <ComparisonCard title="Z RentFlow" items={rentflow} mark="+" />
+        <ComparisonCard title="Z ownerly" items={ownerly} mark="+" />
       </div>
     </section>
   )
@@ -326,21 +326,21 @@ function SocialProof() {
       <div className="mx-auto max-w-6xl">
         <div className="grid gap-4 md:grid-cols-3">
           {[
-            ['24+', 'agencje zainteresowane narzędziem po wynajęciu mieszkania'],
-            ['180+', 'mieszkań omawianych w rozmowach pilotażowych'],
-            ['Lead', 'rozmawiamy z agencjami o potrzebach właścicieli po wynajęciu'],
+            ['Standard', 'Po wynajęciu właściciel nie dostaje już tylko PDF-ów w mailu. Dostaje uporządkowany portal, który wygląda jak naturalne przedłużenie pracy agencji.'],
+            ['Właściciel', 'Dokumenty, terminy, płatności i zgłoszenia są w jednym miejscu. Mniej szukania, mniej pytań, więcej poczucia, że agencja naprawdę zadbała o cały proces.'],
+            ['Early access', 'Agencje, które pierwsze zaoferują taki standard, szybciej zbudują przewagę. Zapisz się teraz i pomóż ułożyć produkt pod realny proces wynajmu.'],
           ].map(([value, label]) => (
             <div key={label} className="rounded-3xl border border-line bg-white p-6 shadow-sm">
-              <p className="text-4xl font-semibold tracking-tight">{value}</p>
-              <p className="mt-2 text-ink/58">{label}</p>
+              <p className="text-2xl font-semibold tracking-tight">{value}</p>
+              <p className="mt-4 leading-7 text-ink/62">{label}</p>
             </div>
           ))}
         </div>
         <div className="mt-4 rounded-3xl border border-line bg-white p-6 shadow-sm">
           <p className="text-lg leading-8 text-ink/72">
-            "Po wynajęciu mieszkania zwykle oddajemy właścicielowi pliki i na tym kończy się nasza rola. Gdyby klient dostał od nas jeszcze proste narzędzie do dalszej obsługi, łatwiej byłoby wrócić przy kolejnym najmie."
+            "Prowizja nie musi być końcem relacji z właścicielem. To moment, w którym agencja może zostawić po sobie coś więcej niż dobrze zamkniętą transakcję: narzędzie, do którego klient wraca za każdym razem, gdy pojawia się dokument, płatność albo sprawa z lokatorem."
           </p>
-          <p className="mt-4 text-sm font-semibold text-ink/55">Placeholder opinii agencji testującej</p>
+          <p className="mt-4 text-sm font-semibold text-ink/55">Manifest ownerly</p>
         </div>
       </div>
     </section>
@@ -353,7 +353,7 @@ function Waitlist() {
       <div className="mx-auto grid max-w-6xl gap-8 rounded-[2rem] bg-white p-6 shadow-soft md:grid-cols-[0.9fr_1.1fr] md:p-10">
         <div>
           <p className="text-sm font-semibold uppercase tracking-[0.18em] text-accent">Kontakt</p>
-          <h2 className="mt-4 text-4xl font-semibold tracking-tight">Sprawdź, czy RentFlow ma sens dla Twojej agencji.</h2>
+          <h2 className="mt-4 text-4xl font-semibold tracking-tight">Sprawdź, czy ownerly ma sens dla Twojej agencji.</h2>
           <p className="mt-4 leading-7 text-ink/62">
             Zostaw kontakt, jeśli chcesz zobaczyć kierunek produktu i porozmawiać o tym, jak takie narzędzie mogłoby działać u Ciebie po wynajęciu mieszkania.
           </p>
@@ -361,7 +361,6 @@ function Waitlist() {
         <form className="grid gap-3" onSubmit={(event) => event.preventDefault()}>
           <Input label="Email" type="email" />
           <Input label="Nazwa agencji" />
-          <Input label="Liczba mieszkań wynajmowanych miesięcznie" type="number" />
           <Input label="Telefon lub LinkedIn" />
           <button className="mt-2 rounded-full bg-ink px-6 py-3 font-semibold text-white transition hover:bg-accent">
             Jestem zainteresowany
@@ -386,27 +385,47 @@ function Input({ label, type = 'text' }) {
 }
 
 function FAQ() {
-  const items = [
-    ['Czy to jest system do zarządzania najmem?', 'Nie. RentFlow ma pomóc agencji przekazać właścicielowi narzędzie do dalszej, samodzielnej obsługi najmu po znalezieniu lokatora i przekazaniu mieszkania.'],
-    ['Czy aplikacja będzie działać na Androidzie i iOS?', 'Tak. Projektujemy ją jako prosty widok mobilny dla właściciela i opcjonalnie dla lokatora.'],
-    ['Czy właściciel musi coś instalować?', 'Chcemy sprawdzić dwa warianty: aplikację mobilną i lekki dostęp przez link. Ważne, żeby właściciel szybko zobaczył swoje mieszkanie i dokumenty.'],
-    ['Czy będzie white-label?', 'Rozważamy branding agencji, bo właściciel ma dostać narzędzie od agencji, a nie anonimowy system.'],
-    ['Ile to będzie kosztować?', 'Cena będzie zależeć od liczby przekazywanych mieszkań i zakresu funkcji. Sprawdzamy też, czy agencje wolą doliczać portal do usługi wynajmu, czy oferować go jako dodatek.'],
+  const groups = [
+    {
+      title: 'Dla Agencji',
+      items: [
+        ['Czym dokładnie jest ownerly i po co agencji takie narzędzie?', 'ownerly to portal, który agencja może przekazać właścicielowi po wynajęciu mieszkania. Zamiast kończyć usługę na umowie i protokole w mailu, zostawiasz klientowi uporządkowane miejsce na dokumenty, płatności i kontakt z lokatorem. Dla agencji to prosty sposób, żeby wyglądać bardziej profesjonalnie i zostać bliżej właściciela do kolejnego zlecenia.'],
+        ['Czy to kolejny CRM albo system do zarządzania najmem?', 'Nie. ownerly nie jest CRM-em dla agentów i nie wymaga prowadzenia całego najmu przez agencję. To narzędzie dla właściciela, który po transakcji sam obsługuje mieszkanie. Agencja daje mu lepszy start i praktyczny dodatek do usługi, bez wchodzenia w rolę zarządcy.'],
+        ['Czy agent będzie musiał spędzać godziny na wprowadzaniu danych?', 'Nie taki jest cel. ownerly ma bazować na danych, które agencja i tak ma przy wynajmie: lokal, właściciel, lokator, umowa i protokół. Chcemy, żeby przekazanie portalu było krótkim elementem zamknięcia transakcji, a nie nowym obowiązkiem administracyjnym.'],
+        ['Co z bezpieczeństwem umów i danych osobowych?', 'Dokumenty najmu, dane właściciela i dane lokatora wymagają ostrożnego podejścia od pierwszego dnia. Dlatego produkt projektujemy wokół kontroli dostępu, ograniczania widoczności danych i bezpiecznego przechowywania dokumentów. Właściciel widzi swoje mieszkanie, a agencja nie musi wysyłać kolejnych wersji plików po mailach.'],
+        ['Ile to będzie kosztować i dlaczego warto zapisać się teraz?', 'Model cenowy dopiero walidujemy. Early access daje agencjom wpływ na to, co faktycznie powstanie: zakres funkcji, sposób przekazania właścicielowi i potencjalny model rozliczeń. Jeśli agencje w Twoim mieście zaczną oferować właścicielom lepsze narzędzia po wynajmie, warto być w tej rozmowie wcześniej, nie dopiero wtedy, gdy stanie się to standardem.'],
+      ],
+    },
+    {
+      title: 'Dla Właściciela i Lokatora',
+      items: [
+        ['Jak właściciel zareaguje na takie narzędzie?', 'Dla właściciela to jasny sygnał, że agencja nie zostawia go samego po podpisaniu umowy. Ma dokumenty, protokoły, terminy płatności i sprawy lokatora w jednym miejscu. Zamiast szukać plików w mailach, widzi podstawowe rzeczy od razu i łatwiej wraca do agencji przy kolejnym wynajmie.'],
+        ['Czy lokator musi instalować aplikację?', 'Nie zakładamy ciężkiego wdrożenia po stronie lokatora. Najważniejsze jest to, żeby mógł szybko zgłosić usterkę, przesłać zdjęcie albo sprawdzić podstawowy status. Testujemy podejście mobile-first, w którym dostęp ma być możliwie prosty także przez link.'],
+        ['Czy ownerly zastępuje kontakt między właścicielem a lokatorem?', 'Nie. ownerly ma uporządkować ten kontakt, a nie go komplikować. Lokator wie, gdzie zgłosić problem, właściciel widzi historię sprawy, a dokumenty i ustalenia nie giną między WhatsAppem, mailem i załącznikami.'],
+      ],
+    },
   ]
 
   return (
     <section id="faq" className="px-4 py-20">
-      <div className="mx-auto max-w-3xl">
-        <SectionIntro eyebrow="FAQ" title="Najczęstsze pytania od agencji zainteresowanych RentFlow." center />
-        <div className="mt-8 divide-y divide-line rounded-3xl border border-line bg-white px-5 shadow-sm">
-          {items.map(([question, answer]) => (
-            <details key={question} className="group py-5">
-              <summary className="flex cursor-pointer list-none items-center justify-between gap-5 font-semibold">
-                {question}
-                <span className="text-2xl font-light text-accent transition group-open:rotate-45">+</span>
-              </summary>
-              <p className="mt-3 leading-7 text-ink/62">{answer}</p>
-            </details>
+      <div className="mx-auto max-w-4xl">
+        <SectionIntro eyebrow="FAQ" title="Pytania, które zwykle pojawiają się przed zostawieniem kontaktu." center />
+        <div className="mt-8 grid gap-5">
+          {groups.map((group) => (
+            <div key={group.title} className="rounded-3xl border border-line bg-white px-5 shadow-sm">
+              <h3 className="border-b border-line py-5 text-sm font-semibold uppercase tracking-[0.18em] text-accent">{group.title}</h3>
+              <div className="divide-y divide-line">
+                {group.items.map(([question, answer]) => (
+                  <details key={question} className="group py-5">
+                    <summary className="flex cursor-pointer list-none items-center justify-between gap-5 font-semibold">
+                      {question}
+                      <span className="text-2xl font-light text-accent transition group-open:rotate-45">+</span>
+                    </summary>
+                    <p className="mt-3 leading-7 text-ink/62">{answer}</p>
+                  </details>
+                ))}
+              </div>
+            </div>
           ))}
         </div>
       </div>
@@ -434,11 +453,11 @@ function Footer() {
     <footer id="contact" className="border-t border-line bg-white px-4 py-10">
       <div className="mx-auto flex max-w-6xl flex-col gap-6 md:flex-row md:items-center md:justify-between">
         <div>
-          <p className="font-semibold">RentFlow</p>
-          <p className="mt-1 text-sm text-ink/55">kontakt@rentflow.pl</p>
+          <p className="font-semibold">ownerly</p>
+          <p className="mt-1 text-sm text-ink/55">kontakt@ownerly.pl</p>
         </div>
         <div className="flex flex-wrap gap-4 text-sm text-ink/60">
-          <a href="mailto:kontakt@rentflow.pl" className="hover:text-ink">Kontakt</a>
+          <a href="mailto:kontakt@ownerly.pl" className="hover:text-ink">Kontakt</a>
           <a href="https://www.linkedin.com" className="hover:text-ink">LinkedIn</a>
           <a href="#privacy" className="hover:text-ink">Polityka prywatności</a>
           <a href="#waitlist" className="hover:text-ink">Formularz kontaktowy</a>
