@@ -1,4 +1,7 @@
 import { motion } from 'framer-motion'
+import agencyScreen from '../agencja.png'
+import ownerScreen from '../wlasciciel.png'
+import tenantScreen from '../lokator.png'
 
 const brandNames = ['ownerly', 'LeaseHub', 'Tenanto', 'Propello', 'HomeFlow', 'Rentlane', 'Keynest', 'Properly', 'Nestflow', 'Tenantly']
 
@@ -46,6 +49,33 @@ const audienceCards = [
   ['Właściciele mieszkań', 'Dla klientów agencji, którzy później sami pilnują dokumentów, płatności, kontaktu z lokatorem i usterek.'],
 ]
 
+const productScreens = [
+  {
+    role: 'Agencja',
+    label: 'Przekazanie lokalu',
+    title: 'Agent domyka wynajem i oddaje właścicielowi gotowy panel.',
+    text: 'Lokal, dokumenty i dostęp trafiają do jednego procesu, bez ręcznego odsyłania właściciela między plikami i wiadomościami.',
+    image: agencyScreen,
+    accent: 'bg-ocean/10 text-ocean',
+  },
+  {
+    role: 'Właściciel',
+    label: 'Portfel najmu',
+    title: 'Właściciel widzi status najmu, płatności i dokumenty.',
+    text: 'Po pracy agencji klient ma spokojny pulpit do codziennego pilnowania mieszkania, a nie folder z przypadkowymi załącznikami.',
+    image: ownerScreen,
+    accent: 'bg-accent/10 text-accent',
+  },
+  {
+    role: 'Lokator',
+    label: 'Sprawy lokalu',
+    title: 'Lokator szybko zgłasza usterkę albo sprawdza podstawowe informacje.',
+    text: 'Zgłoszenia, terminy i kontakt są uporządkowane od początku, więc właściciel dostaje pełniejszy obraz sprawy.',
+    image: tenantScreen,
+    accent: 'bg-[#7c4dff]/10 text-[#6b3df0]',
+  },
+]
+
 function App() {
   return (
     <div className="min-h-screen overflow-hidden text-ink">
@@ -54,6 +84,7 @@ function App() {
         <Hero />
         <WhyAgencies />
         <HowItWorks />
+        <ProductViews />
         <Features />
         <TodayVsRentFlow />
         <Audience />
@@ -116,61 +147,22 @@ function Hero() {
 }
 
 function PhoneShowcase() {
-  const cards = [
-    ['Umowa najmu.pdf', 'Przekazana przez agencję', 'PDF', 'bg-accent/10 text-accent'],
-    ['Protokół przekazania', 'Zdjęcia i podpisy gotowe', 'PDF', 'bg-ocean/10 text-ocean'],
-    ['Czynsz za maj', 'Do oznaczenia przez właściciela', 'Termin', 'bg-accent/10 text-accent'],
-    ['Usterka: zlew w kuchni', 'Zgłoszona przez lokatora', 'Nowe', 'bg-blush/10 text-blush'],
-    ['Kontakt do lokatora', 'Jan Nowak', 'Lokator', 'bg-ink/8 text-ink'],
-  ]
-
   return (
     <motion.div
       initial={{ opacity: 0, scale: 0.96, y: 24 }}
       animate={{ opacity: 1, scale: 1, y: 0 }}
       transition={{ duration: 0.8, delay: 0.1 }}
-      className="relative mx-auto w-full max-w-[25rem]"
+      className="relative mx-auto h-[34rem] w-full max-w-[30rem] md:h-[39rem]"
     >
-      <div className="absolute -left-8 top-16 h-24 w-24 rounded-full bg-blush/20 blur-3xl" />
-      <div className="absolute -right-8 bottom-12 h-32 w-32 rounded-full bg-ocean/20 blur-3xl" />
-      <div className="phone-frame relative min-h-[37rem] overflow-hidden shadow-phone">
-        <div className="mx-auto mt-3 h-6 w-24 rounded-full bg-ink" />
-        <div className="p-5">
-          <div className="flex items-center justify-between pt-3">
-            <div>
-              <p className="text-xs text-ink/45">Panel właściciela</p>
-              <h3 className="text-2xl font-semibold">Wilcza 42, Warszawa</h3>
-            </div>
-            <div className="grid h-11 w-11 place-items-center rounded-full bg-accent/12 text-sm font-bold text-accent">WN</div>
-          </div>
-          <div className="mt-6 rounded-[1.5rem] bg-ink p-5 text-white">
-            <div className="flex items-center justify-between">
-              <p className="text-sm text-white/60">Portal od agencji</p>
-              <span className="rounded-full bg-white/12 px-3 py-1 text-xs">po przekazaniu</span>
-            </div>
-            <p className="mt-5 text-3xl font-semibold leading-tight">Najem pod kontrolą</p>
-            <p className="mt-2 text-sm leading-6 text-white/58">Właściciel ma dokumenty, terminy i zgłoszenia lokatora w jednym miejscu.</p>
-          </div>
-          <div className="mt-5 space-y-3">
-            {cards.map((card, index) => (
-              <motion.div
-                key={card[0]}
-                animate={{ y: [0, -4, 0] }}
-                transition={{ duration: 3.2, delay: index * 0.18, repeat: Infinity, ease: 'easeInOut' }}
-                className="rounded-2xl border border-line bg-white p-4 shadow-sm"
-              >
-                <div className="flex items-center gap-3">
-                  <span className="grid h-10 w-10 shrink-0 place-items-center rounded-xl bg-mist text-sm font-semibold text-accent">{card[0][0]}</span>
-                  <div className="min-w-0 flex-1">
-                    <p className="truncate font-semibold">{card[0]}</p>
-                    <p className="truncate text-sm text-ink/50">{card[1]}</p>
-                  </div>
-                  <span className={`rounded-full px-2.5 py-1 text-xs font-medium ${card[3]}`}>{card[2]}</span>
-                </div>
-              </motion.div>
-            ))}
-          </div>
-        </div>
+      <div className="absolute inset-x-8 bottom-4 top-7 rounded-[2.2rem] bg-ink/8 blur-2xl" />
+      <div className="phone-frame absolute left-1/2 top-2 z-30 w-[15.5rem] -translate-x-1/2 overflow-hidden shadow-phone md:w-[18rem]">
+        <img src={agencyScreen} alt="Panel agencji ownerly" className="block h-auto w-full" />
+      </div>
+      <div className="phone-frame absolute left-0 top-24 z-20 hidden w-[13rem] -rotate-6 overflow-hidden shadow-soft sm:block md:w-[15rem]">
+        <img src={ownerScreen} alt="Panel właściciela ownerly" className="block h-auto w-full" />
+      </div>
+      <div className="phone-frame absolute right-0 top-28 z-10 hidden w-[13rem] rotate-6 overflow-hidden shadow-soft sm:block md:w-[15rem]">
+        <img src={tenantScreen} alt="Panel lokatora ownerly" className="block h-auto w-full" />
       </div>
     </motion.div>
   )
@@ -225,6 +217,42 @@ function HowItWorks() {
               </div>
               <h3 className="text-xl font-semibold">{title}</h3>
               <p className="mt-3 leading-7 text-ink/62">{text}</p>
+            </motion.article>
+          ))}
+        </div>
+      </div>
+    </section>
+  )
+}
+
+function ProductViews() {
+  return (
+    <section className="px-4 py-20">
+      <div className="mx-auto max-w-6xl">
+        <SectionIntro eyebrow="Tak wygląda produkt" title="Trzy pulpity, które prowadzą ten sam proces od przekazania lokalu po codzienną obsługę najmu." />
+        <div className="mt-10 grid gap-5 lg:grid-cols-3">
+          {productScreens.map((screen, index) => (
+            <motion.article
+              key={screen.role}
+              initial={{ opacity: 0, y: 18 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, margin: '-80px' }}
+              transition={{ delay: index * 0.06 }}
+              className="grid overflow-hidden rounded-[2rem] border border-line bg-white shadow-soft"
+            >
+              <div className="p-6">
+                <div className="flex items-center justify-between gap-4">
+                  <span className={`rounded-full px-3 py-1 text-sm font-semibold ${screen.accent}`}>{screen.role}</span>
+                  <span className="text-sm font-medium text-ink/45">{screen.label}</span>
+                </div>
+                <h3 className="mt-7 text-2xl font-semibold tracking-tight">{screen.title}</h3>
+                <p className="mt-4 leading-7 text-ink/62">{screen.text}</p>
+              </div>
+              <div className="relative min-h-[27rem] overflow-hidden bg-mist px-6 pt-6">
+                <div className="phone-frame mx-auto w-[15.5rem] overflow-hidden shadow-phone">
+                  <img src={screen.image} alt={`Widok ${screen.role.toLowerCase()} w ownerly`} className="block h-auto w-full" />
+                </div>
+              </div>
             </motion.article>
           ))}
         </div>
